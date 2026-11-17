@@ -5,7 +5,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoibTF0YWtldWMiLCJhIjoiY213a2Q4Z3BmMGRuZTMwcHZ4c
 
 const map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/light-v11',
+    style: 'mapbox://styles/mapbox/dark-v11',
     center: [-71.09415, 42.36027],
     zoom: 12,
     minZoom: 5,
@@ -87,7 +87,7 @@ function computeStationTraffic(stations, timeFilter = -1) {
     });
 }
 
-function addBikeLanes(id, url, color = '#16a34a') {
+function addBikeLanes(id, url, color = '#2dd4bf') {
     map.addSource(id, {
         type: 'geojson',
         data: url
@@ -100,7 +100,7 @@ function addBikeLanes(id, url, color = '#16a34a') {
         paint: {
             'line-color': color,
             'line-width': 3,
-            'line-opacity': 0.65
+            'line-opacity': 0.75
         }
     });
 }
@@ -149,9 +149,9 @@ async function addCambridgeBikeLanes() {
         type: 'line',
         source: 'cambridge-bike-lanes',
         paint: {
-            'line-color': '#16a34a',
+            'line-color': '#2dd4bf',
             'line-width': 3,
-            'line-opacity': 0.65
+            'line-opacity': 0.75
         }
     });
 }
